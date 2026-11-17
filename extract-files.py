@@ -88,6 +88,7 @@ blob_fixups: blob_fixups_user_type = {
         'odm/lib64/libadaptivehdr.so',
         'odm/lib64/libcolortempmode.so',
         'odm/lib64/libdither.so',
+        'odm/lib64/libdynamicelvss.so',
         'odm/lib64/libflatmode.so',
         'odm/lib64/libhistprocess.so',
         'odm/lib64/libmiBrightness.so',
@@ -195,6 +196,14 @@ blob_fixups: blob_fixups_user_type = {
             ],
         ),
 
+    'odm/lib64/camera/plugins/com.xiaomi.plugin.watermarkV2.so': blob_fixup()
+        .call(
+            blob_fixup_graphic_buffer_size,
+            [
+                '_ZN17WatermarkPluginV214processRequestEP18ProcessRequestInfo',
+            ],
+        ),
+
     (
         'odm/lib64/camera/plugins/com.xiaomi.plugin.gainmap.so',
         'odm/lib64/camera/plugins/com.xiaomi.plugin.jpegrAggr.so'
@@ -236,7 +245,7 @@ blob_fixups: blob_fixups_user_type = {
         'odm/lib64/libMiVideoFilter.so',
         'odm/lib64/libTrueSight.so',
         'odm/lib64/libarcsoft_beautyshot.so',
-        'odm/lib64/libwa_widelens_undistort.so',
+        'odm/lib64/libpendant_wrapper.so',
         'vendor/lib64/libMiPhotoFilter.so'
     ): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
@@ -268,6 +277,13 @@ blob_fixups: blob_fixups_user_type = {
             'android.media.audio.common.types-V4-cpp.so',
             'android.media.audio.common.types-V5-cpp.so'
     ),
+
+    (
+        'vendor/bin/hw/vendor.qti.media.c2@1.0-service',
+        'vendor/bin/hw/vendor.qti.media.c2audio@1.0-service',
+    ): blob_fixup()
+        .sig_replace('00 2a 80 52', '00 2c 80 52'),
+
     'vendor/bin/system_dlkm_modprobe.sh': blob_fixup()
         .regex_replace(
             r'for kernel_ver_dir in \$\{system_dlkm_dir\}/\*;',
@@ -276,9 +292,6 @@ blob_fixups: blob_fixups_user_type = {
 
     'vendor/etc/clstc_config_library.xml': blob_fixup()
         .regex_replace(r'<library>\s*<name>libdolbyclstc[\s\S]*?</library>', ''),
-
-    'vendor/etc/seccomp_policy/qesdksec.policy': blob_fixup()
-        .add_line_if_missing('lseek: 1'),
 
     'vendor/etc/sensors/hals.conf': blob_fixup()
         .regex_replace('.*vl53l8.*\n?', ''),

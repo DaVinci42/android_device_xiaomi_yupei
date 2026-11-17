@@ -260,12 +260,6 @@ odm/etc/camera/CFR_para_W_V01_IZOOM.bin
 odm/etc/camera/CFR_para_W_V01_SN.bin
 odm/etc/camera/GpuKernelRepo.pb
 odm/etc/camera/HIS_LensConf.json
-odm/etc/camera/IntellFocus_class_all.dlc
-odm/etc/camera/IntellFocus_class_human.dlc
-odm/etc/camera/IntellFocus_detect_1st.dlc
-odm/etc/camera/IntellFocus_saliency.dlc
-odm/etc/camera/IntellFocus_track_backbone.dlc
-odm/etc/camera/IntellFocus_track_head.dlc
 odm/etc/camera/SensePR_scene_configs.json
 odm/etc/camera/af_class_all.dlc
 odm/etc/camera/af_class_human.dlc
@@ -572,7 +566,6 @@ odm/etc/camera/xmi_slmt_4x_720p.dlc
 odm/lib64/camera/libchxlogicalcameratable.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.GestureEffects.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.anchor.so
-odm/lib64/camera/plugins/com.xiaomi.plugin.depurple.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.filter.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.frontbokeh.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.frontbokehpreview.so
@@ -603,6 +596,7 @@ odm/lib64/camera/plugins/com.xiaomi.plugin.swflip.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.swjpegencode.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.videofilter.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.watermark.so
+odm/lib64/camera/plugins/com.xiaomi.plugin.watermarkV2.so
 odm/lib64/camera/plugins/com.xiaomi.plugin.yuv2Heic.so
 odm/lib64/camera/zsl/com.xiaomi.zsl.aihighlight.so
 odm/lib64/camera/zsl/com.xiaomi.zsl.bokehrawhdr.so
@@ -620,7 +614,6 @@ odm/lib64/camera/zsl/com.xiaomi.zsl.nightmotionzslbanding.so
 odm/lib64/camera/zsl/com.xiaomi.zsl.single.so
 odm/lib64/camera/zsl/com.xiaomi.zsl.sr.so
 odm/lib64/libAncHumanPreviewBokeh.so
-odm/lib64/libIntelligentFocus.so
 odm/lib64/libMiEmojiEffect.so
 odm/lib64/libMiVideoFilter.so
 odm/lib64/libanc_edof_checker.so
@@ -630,17 +623,17 @@ odm/lib64/libarcsoft_qnnhtp.so
 odm/lib64/libarcsoft_scbokeh_video.so
 odm/lib64/libarcsoft_super_night_detection.so
 odm/lib64/libarcsoft_turbo_hdr_detection.so
-odm/lib64/libcamera_scene.so
 odm/lib64/libcameraheif.so
 odm/lib64/libhandgesture.arcsoft.so
 odm/lib64/libheichal.so
-odm/lib64/libmiSAT.so;FIX_SONAME
+odm/lib64/libmiSAT.so
 odm/lib64/libmialgo_aio_seg.so
 odm/lib64/libmialgo_cls.so
 odm/lib64/libmialgo_sd.so
 odm/lib64/libmialgo_utils.so
 odm/lib64/libmiocr.so
 odm/lib64/libmismartae.so
+odm/lib64/libpendant_wrapper.so
 odm/lib64/libportrait_repair_qnn.so
 odm/lib64/librfs_warp.so
 odm/lib64/libwa_widelens_undistort.so
@@ -985,7 +978,6 @@ vendor/lib64/libcom.xiaomi.qimagebuffer.so
 vendor/lib64/libcom.xiaomi.sensorpolicy.so
 vendor/lib64/libcom.xiaomi.signaltrigger.so
 vendor/lib64/libcommonchiutils.so
-vendor/lib64/libdeflicker.so
 vendor/lib64/libecoengine.so
 vendor/lib64/libfastmessage.so
 vendor/lib64/libhdr10plus.so
@@ -1038,9 +1030,7 @@ vendor/lib64/liboischannel.so
 vendor/lib64/libopencv.so
 vendor/lib64/libopencv3a.so
 vendor/lib64/libopencv_core.so
-vendor/lib64/libopencv_core_se.so
 vendor/lib64/libopencv_imgproc.so
-vendor/lib64/libopencv_imgproc_se.so
 vendor/lib64/libopestriping.so
 vendor/lib64/libos.so
 vendor/lib64/libpostprocinfo.so
@@ -1105,7 +1095,6 @@ odm/lib64/camera/components/com.mi.node.aiasd.so
 odm/lib64/camera/components/com.mi.node.realtimebokeh.so
 odm/lib64/camera/components/com.mi.node.singlebokeh.so
 odm/lib64/camera/components/com.mi.node.videonight.so
-odm/lib64/camera/components/com.qti.node.intelligentfocus.so
 odm/lib64/camera/components/com.qti.node.ldc.so
 vendor/lib64/camera/components/com.mi.node.fd.so
 vendor/lib64/camera/components/com.mi.node.miaihighlight.so
@@ -1514,7 +1503,7 @@ vendor/bin/qdcmss
 vendor/etc/init/qdcmss.rc
 vendor/etc/init/vendor.qti.hardware.display.composer-service.rc:vendor/etc/init/vendor.qti.hardware.display.composer-service_xiaomi.rc
 vendor/etc/snapdragon_color_libs_config.xml
-vendor/etc/vintf/manifest/mapper.qti.xml
+vendor/etc/vintf/manifest/mapper.qti.xml:vendor/etc/vintf/manifest/mapper.qti_xiaomi.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service3_v3.xml:vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service3_v3_xiaomi.xml
 vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/mapper.qti.so
@@ -1596,9 +1585,11 @@ odm/lib64/libcolortempmode.so
 odm/lib64/libdisplaycount.so
 odm/lib64/libdisplaylog.so
 odm/lib64/libdither.so
+odm/lib64/libdynamicelvss.so
 odm/lib64/libeyecare.so
 odm/lib64/libflatmode.so
 odm/lib64/libfpsmonitor.so
+odm/lib64/libframemasterintf.so
 odm/lib64/libhistprocess.so
 odm/lib64/libmi-stc-HW-modulate.so
 odm/lib64/libmiBrightness.so
@@ -1613,6 +1604,7 @@ odm/lib64/libsdr2hdr.so
 odm/lib64/libsre.so
 odm/lib64/libtruetone.so
 odm/lib64/libvideomode.so
+odm/lib64/vendor.xiaomi.hardware.framemaster-V1-ndk.so
 vendor/bin/displayfeature
 vendor/bin/hw/vendor.xiaomi.hardware.displayfeature_aidl-service
 vendor/etc/init/vendor.xiaomi.hardware.displayfeature_aidl-service.rc
@@ -1623,16 +1615,6 @@ vendor/lib64/libqdMetaData.so
 
 # Displayfeature (Configs)
 odm/etc/df_default.xml
-vendor/etc/display/sm8750_sr_1x_y1280x720.dlc
-vendor/etc/display/sm8750_sr_1x_y544x960.dlc
-vendor/etc/display/sm8750_sr_1x_y720x1280.dlc
-vendor/etc/display/sm8750_sr_1x_y960x544.dlc
-vendor/etc/display/sm8750_sr_2x_y1280x720.dlc
-vendor/etc/display/sm8750_sr_2x_y544x960.dlc
-vendor/etc/display/sm8750_sr_2x_y720x1280.dlc
-vendor/etc/display/sm8750_sr_2x_y960x544.dlc
-vendor/etc/display/sm8750_sr_3x_y384x640.dlc
-vendor/etc/display/sm8750_sr_3x_y640x384.dlc
 
 # Dolby
 odm/etc/dolby/dax-default-spatializer.xml
@@ -1795,13 +1777,6 @@ vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libhdcpsrm.so
 vendor/lib64/libmm-hdcpmgr.so
 
-# Hotword enrollment
-product/etc/permissions/privapp-permissions-google-audio-system.xml:product/etc/permissions/privapp-permissions-hotword.xml
-product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
-product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk
-system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
-system_ext/framework/com.android.hotwordenrollment.common.util.jar
-
 # Kernel
 vendor/bin/init.qti.write.sh
 vendor/bin/system_dlkm_modprobe.sh
@@ -1867,11 +1842,8 @@ vendor/lib64/qti.video.utils.videobufferlayout.so
 vendor/etc/public.libraries.txt
 
 # Neural networks
-vendor/data/model/seg_quantized.serialized.8750.pertensor_512_cls3r.bin
 vendor/etc/ASR_binary/Whisper/libQnnHtpV79Skel.so
 vendor/etc/ASR_binary/Whisper/speech_float.eai
-vendor/etc/decoder.serialized.8750.O3.bin
-vendor/etc/encoder.serialized.8750.O3.bin
 vendor/lib64/libQnnChrometraceProfilingReader.so
 vendor/lib64/libQnnCpu.so
 vendor/lib64/libQnnDsp.so
@@ -1896,7 +1868,6 @@ vendor/lib64/libQnnJsonProfilingReader.so
 vendor/lib64/libQnnModelDlc.so
 vendor/lib64/libQnnSaver.so
 vendor/lib64/libQnnSystem.so
-vendor/lib64/libSEGModel.so
 
 # Pencil engine
 system_ext/framework/xiaomi-pencilengine-pad.jar
@@ -1946,18 +1917,10 @@ vendor/bin/init.qti.qcv.sh
 vendor/etc/init/init.qti.qcv.rc
 
 # QESDK
-system_ext/app/FrameworksUtilsSysService/FrameworksUtilsSysService.apk
 system_ext/etc/vintf/manifest/vendor.qti.qesdsys.service.xml
 system_ext/lib64/libqesdk_ndk_platform.qti.so
-vendor/bin/qesdk-manager
-vendor/bin/qesdk-secmanager
 vendor/bin/snapdragon_services
-vendor/etc/init/qesdk-manager.rc
-vendor/etc/init/qesdk-secmanager.rc
 vendor/etc/init/snapdragon_services.rc
-vendor/etc/seccomp_policy/qesdk.policy
-vendor/etc/seccomp_policy/qesdksec.policy
-vendor/etc/vintf/manifest/qesdk-manager.xml
 vendor/etc/vintf/manifest/snapdragon_services.xml
 vendor/lib64/liblocation_qesdk.so
 vendor/lib64/libqesdk2_0.so
@@ -2376,7 +2339,6 @@ vendor/lib64/qtiril-utils.so
 # Camera libraries - yupei
 odm/lib64/libFaceCenterAlgo.so
 vendor/lib64/libMiStereoFactoryCalibAnalyzeBin_qual.so
-odm/lib64/libalCFR.so
 odm/lib64/libarcsoft_beautyshot.so
 odm/lib64/libarcsoft_hdr_detection.so
 odm/lib64/libarcsoft_high_dynamic_range.so
@@ -2391,7 +2353,6 @@ vendor/lib64/libvega_common.so
 # Camera - yupei
 odm/etc/camera/aivsModel_558B456C
 odm/etc/camera/aivsModel_F01EC698
-odm/etc/camera/alCFR_Segmodel.bin
 odm/etc/camera/cameraopt_reclaim.json
 odm/etc/camera/facesr.model
 odm/etc/camera/jiiganLdcFront/ldc_cap_cache
@@ -2804,12 +2765,10 @@ odm/firmware/novatek_nt36532_yupei_mp_boe.bin
 odm/firmware/novatek_nt36532_yupei_mp_csot.bin
 odm/firmware/palm_check.tflite
 odm/firmware/water_check.tflite
-odm/firmware/yupei_nova_boe_thp_config.ini
-odm/firmware/yupei_nova_csot_thp_config.ini
+odm/firmware/yupei_nova_boe_thp_config.cfg
+odm/firmware/yupei_nova_csot_thp_config.cfg
 
 # VPU firmware - yupei
 odm/firmware/vpu30_2v_unsigned.mbn
-odm/firmware/vpu33_4v.mbn
-odm/firmware/vpu33_4v_unsigned.mbn
 odm/firmware/vpu35_4v.mbn
 odm/firmware/vpu35_4v_unsigned.mbn
