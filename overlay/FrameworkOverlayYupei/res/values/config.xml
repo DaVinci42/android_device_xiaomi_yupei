@@ -98,4 +98,11 @@
 
     <!-- Sleep when the cover is closed and wake when it is opened. -->
     <bool name="config_lidControlsSleep">true</bool>
+
+    <!-- Suppress battery notification LED so charging does not light up front-camera privacy LED -->
+    <integer name="config_notificationsBatteryLowARGB">0x00000000</integer>
+    <integer name="config_notificationsBatteryMediumARGB">0x00000000</integer>
+    <integer name="config_notificationsBatteryFullARGB">0x00000000</integer>
+    <integer name="config_notificationsBatteryLedOn">0</integer>
+    <integer name="config_notificationsBatteryLedOff">0</integer>
 </resources>

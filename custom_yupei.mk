@@ -8,8 +8,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit some common PixelOS stuff.
+TARGET_SCREEN_WIDTH := 1440
 $(call inherit-product, vendor/custom/config/common_full_tablet_wifionly.mk)
-TARGET_SCREEN_WIDTH := 2136
 
 # Inherit from yupei device
 $(call inherit-product, device/xiaomi/yupei/device.mk)

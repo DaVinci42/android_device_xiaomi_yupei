@@ -6,4 +6,10 @@
 <resources>
     <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
     <string name="def_device_name_simple">Xiaomi Pad 8</string>
+
+    <!-- Enable auto-rotation by default on tablet -->
+    <bool name="def_accelerometer_rotation">true</bool>
+
+    <!-- Show software IME when Nanosic Pogo virtual keyboard is present -->
+    <bool name="def_show_ime_with_hard_keyboard">true</bool>
 </resources>
