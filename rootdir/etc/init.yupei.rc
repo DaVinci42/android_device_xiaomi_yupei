@@ -34,9 +34,6 @@ on early-boot
     # Enable WLAN cold boot calibration
     write /sys/kernel/cnss/fs_ready 1
 
-on fs
-    restorecon_recursive /mnt/rescue
-
 on boot
     setprop persist.bluetooth.a2dp_offload.disabled false
 

@@ -1,6 +1,9 @@
 # Audio
 type audio_socket, file_type;
 
+# BSPLog
+type vendor_bsp_data_log_file, data_file_type, file_type;
+
 # Camera
 type camera_persist_file, file_type, vendor_persist_type;
 type camlog_device, dev_type;
@@ -17,6 +20,9 @@ type vendor_sysfs_displayfeature, fs_type, sysfs_type;
 
 # Dolby
 type vendor_dolby_data_file, file_type, data_file_type;
+
+# QRTR
+type vendor_qrtr_data_file, data_file_type, file_type;
 
 # Sensor
 type vendor_aon_vendor_data_file, data_file_type, file_type;

@@ -64,6 +64,8 @@ genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup u:objec
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.i2c/i2c-8/8-0038/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/884000.i2c/i2c-9/9-0057/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/88c000.i2c/i2c-11/11-0065/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/88c000.i2c/i2c-11/11-006a/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a94000.i2c/i2c-5/5-004c/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:mca_qcom_battery_gauge/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:mca_strategy_wireless_revchg_class/wakeup u:object_r:sysfs_wakeup:s0
 

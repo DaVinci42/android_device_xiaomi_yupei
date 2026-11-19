@@ -7,3 +7,4 @@ allow vendor_wcnss_service vendor_data_file:file { w_file_perms create getattr r
 allow vendor_wcnss_service vendor_mac_vendor_data_file:dir { rw_dir_perms setattr };
 allow vendor_wcnss_service vendor_mac_vendor_data_file:file { create getattr open read setattr write };
 allow vendor_wcnss_service vendor_persist_bluetooth_file:dir search;
+allow vendor_wcnss_service vendor_persist_bluetooth_file:file { getattr open read setattr };

@@ -1,0 +1,3 @@
+dontaudit vendor_modprobe block_device:dir search;
+dontaudit vendor_modprobe self:capability sys_nice;
+dontaudit vendor_modprobe self:key write;

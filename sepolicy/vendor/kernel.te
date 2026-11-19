@@ -1,1 +1,3 @@
 r_dir_file(kernel, vendor_file)
+dontaudit kernel block_device:dir search;
+dontaudit kernel self:capability net_bind_service;
