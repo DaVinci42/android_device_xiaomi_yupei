@@ -61,7 +61,7 @@ constexpr VariantInfo kYupeiCn = {
     .model = "25097RP43C",
     .name = "yupei",
     .marketname = "Xiaomi Pad 8",
-    .mod_device = "yupei",
+    .mod_device = "yupei_global",
     .build_fingerprint = "Xiaomi/yupei/yupei:15/AQ3A.250226.002/OS4.0.11.0.XPZCN:user/release-keys",
     .build_desc = "yupei-user 15 AQ3A.250226.002 OS4.0.11.0.XPZCN release-keys",
 };
@@ -88,7 +88,7 @@ constexpr VariantInfo kYupeidCn = {
     .model = "M656BA",
     .name = "yupei_d",
     .marketname = "Xiaomi Pad 9",
-    .mod_device = "yupei_d",
+    .mod_device = "yupei_d_global",
     .build_fingerprint = "Xiaomi/yupei_d/yupei:15/AQ3A.250226.002/OS4.0.11.0.XPZCN:user/release-keys",
     .build_desc = "yupei_d-user 15 AQ3A.250226.002 OS4.0.11.0.XPZCN release-keys",
 };

@@ -46,8 +46,8 @@ persist.vendor.qti.btadvaudio.target.support.xpan=true
 ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
+persist.vendor.camera.privapp.list=org.lineageos.aperture,com.android.camera
 ro.camera.enableCamera1MaxZsl=1
-ro.camerax.extensions.enabled=true
 
 # Crypto
 ro.crypto.metadata_init_delete_all_keys.enabled=true

@@ -105,4 +105,7 @@
     <integer name="config_notificationsBatteryFullARGB">0x00000000</integer>
     <integer name="config_notificationsBatteryLedOn">0</integer>
     <integer name="config_notificationsBatteryLedOff">0</integer>
+
+    <!-- Clear Aperture QR component override when Stock MiuiCamera overrides Aperture -->
+    <string name="config_defaultQrCodeComponent" translatable="false"></string>
 </resources>
